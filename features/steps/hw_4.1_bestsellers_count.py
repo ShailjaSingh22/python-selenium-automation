@@ -12,9 +12,10 @@ def click_bestseller_link(context):
 
 @then('user verifies the bestseller URL')
 def bestseller_url_verification(context):
-    assert 'bestsellers' in context.current_url, f"Expected query not in {context.current_url}" #@svetlana : this line is giving me attribute error but not sure what's wrong'
-    print(context.current_url)
+    assert 'bestsellers' in context.driver.current_url.lower(), f"Expected query not in {context.driver.current_url.lower()}" #@svetlana : this line is giving me attribute error but not sure what's wrong'
+    print(context.current_url.lower())
     sleep(4)
+    #assert search_word.lower() in context.driver.current_url.lower(), f"Expected query not in {context.driver.current_url.lower()}"
 
 
 @then('user verifies count of links in bestseller')
