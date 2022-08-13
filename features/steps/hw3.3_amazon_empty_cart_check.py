@@ -4,7 +4,8 @@ from time import sleep
 
 @given('user opens Amazon page')
 def open_amazon_page(context):
-    context.driver.get('https://www.amazon.com/')
+    #context.driver.get('https://www.amazon.com/')
+    context.app.main_page.open_main()
 
 @when('user clicks on cart icon')
 def click_cart_icon(context):
